@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> graph matches the snapshot 1`] = `
+<div
+  id="membershipGraph"
+>
+  <div
+    className=""
+  >
+    <h2>
+      Membership Graph
+    </h2>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="rounded border border-light col-md-6 mx-auto"
+      id="graph"
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 0,
+            }
+          }
+        />
+        <div
+          className="bg-primary text-white rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "margin": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          Group 1
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+        <div
+          className="bg-primary text-white rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "margin": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          Group 2
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 1
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 2
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+        <div
+          className="bg-primary text-white rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "margin": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          Group 3
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 3
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 4
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+        <div
+          className="bg-primary text-white rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "margin": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          Group 4
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 5
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 100,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 6
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 0,
+            }
+          }
+        />
+        <div
+          className="bg-primary text-white rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "margin": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          Group 5
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 1
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+        <div
+          className="border border-primary rounded d-flex justify-content-center align-items-center"
+          style={
+            Object {
+              "height": "50px",
+              "marginBottom": "5px",
+              "width": "150px",
+            }
+          }
+        >
+          User 7
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

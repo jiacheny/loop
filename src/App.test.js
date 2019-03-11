@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import {configure, shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import App from './App';
+import Graph from './components/Graph';
+import renderer from 'react-test-renderer';
+
 
 configure({adapter: new Adapter()});
 
@@ -129,6 +132,43 @@ describe('<App />', () => {
     deleteButton.simulate("click");
     expect(Object.values(app.state("nodes")).filter(n => n.type === 'group').length).toEqual(initialNumberOfGroup - 1);
 
+  });
+
+  it('graph matches the snapshot', () => {
+    const mockState = {
+      nodes: {
+        "g1": {name: "Group 1", type: "group"},
+        "g2": {name: "Group 2", type: "group"},
+        "g3": {name: "Group 3", type: "group"},
+        "g4": {name: "Group 4", type: "group"},
+        "g5": {name: "Group 5", type: "group"},
+        "g6": {name: "Group 6", type: "group"},
+        "g7": {name: "Group 7", type: "group"},
+        "u1": {name: "User 1", type: "user"},
+        "u2": {name: "User 2", type: "user"},
+        "u3": {name: "User 3", type: "user"},
+        "u4": {name: "User 4", type: "user"},
+        "u5": {name: "User 5", type: "user"},
+        "u6": {name: "User 6", type: "user"},
+        "u7": {name: "User 7", type: "user"}
+      },
+      isMemberOfGraph: [
+        {from: "g2", to: "g1"},
+        {from: "g3", to: "g1"},
+        {from: "g4", to: "g1"},
+        {from: "u1", to: "g2"},
+        {from: "u1", to: "g5"},
+        {from: "u2", to: "g2"},
+        {from: "u3", to: "g3"},
+        {from: "u4", to: "g3"},
+        {from: "u5", to: "g4"},
+        {from: "u6", to: "g4"},
+        {from: "u7", to: "g5"}
+      ],
+      newNodeNameExist: false
+    };
+    const appTree = renderer.create(<Graph nodes={mockState.nodes} isMemberOfGraph={mockState.isMemberOfGraph}/>).toJSON();
+    expect(appTree).toMatchSnapshot();
   });
 
 });

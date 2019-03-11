@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 
 import SingleMemberManagement from './components/SingleMemberManagement';
+import Graph from './components/Graph';
 
 const headerStyle = {
   height: '100px'
@@ -28,6 +29,19 @@ class App extends Component {
         "u6": {name: "User 6", type: "user"},
         "u7": {name: "User 7", type: "user"}
       },
+      isMemberOfGraph: [
+        {from: "g2", to: "g1"},
+        {from: "g3", to: "g1"},
+        {from: "g4", to: "g1"},
+        {from: "u1", to: "g2"},
+        {from: "u1", to: "g5"},
+        {from: "u2", to: "g2"},
+        {from: "u3", to: "g3"},
+        {from: "u4", to: "g3"},
+        {from: "u5", to: "g4"},
+        {from: "u6", to: "g4"},
+        {from: "u7", to: "g5"}
+      ],
       newNodeNameExist: false
     }
   }
@@ -79,10 +93,7 @@ class App extends Component {
           </div>
         </div>
 
-        <div id="membershipGraph">
-          <h3>Membership Graph</h3>
-          <div>Placeholders</div>
-        </div>
+        <Graph nodes={this.state.nodes} isMemberOfGraph={this.state.isMemberOfGraph}/>
 
       </div>
 
