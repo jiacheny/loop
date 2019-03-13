@@ -1,8 +1,27 @@
-### Environment
+### Loop coding test
+
+The screenshot below is what you will see when you start running this app.
+
+![initial interface](screeshot initial interface.png "initial interface")
+
+## Environment
 
 * WebStorm
 * Chrome
 * React Devtool
+
+## Languages
+
+* React
+* Typescript (in Helper.js)
+
+## Test frameworks
+
+* Enzyme
+* react-test-renderer snapshot for membership `<Graph/>`
+* test coverage result, please the image below
+
+![test coveragee](screenshot test coverage.png "test coverage")
 
 ## How to run
 
