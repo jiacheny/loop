@@ -119,3 +119,14 @@ function isGroup (key: string): boolean {
 function isUser(key: string): boolean {
   return key.startsWith("u");
 }
+
+export function randomKey(type: string) {
+  let key = "";
+  let id = Math.round(Math.random() * 100);
+  if (type === 'group') {
+    key = "g" + id;
+  } else if (type === "user") {
+    key = "u" + id;
+  }
+  return key;
+}

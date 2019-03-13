@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import './App.css';
 
 import SingleMemberManagement from './components/SingleMemberManagement';
+import MemberAssignment from './components/MemberAssignment';
 import Graph from './components/Graph';
+
+import {randomKey} from "./utils/Helper";
 
 const headerStyle = {
   height: '100px'
@@ -61,37 +64,11 @@ class App extends Component {
           deleteClicked={this.deleteClicked.bind(this)}
         />
 
-        <div id="memberAssignment" className="form-row p-3 d-flex justify-content-center">
-
-          <div className="col-md-2">
-            <label>Member</label>
-            <select className="custom-select">
-              <option>Select member</option>
-              <option disabled={true}>--- users ---</option>
-              <option disabled={true}>--- groups ---</option>
-            </select>
-          </div>
-
-
-          <div className="col-md-2">
-            <label>Group</label>
-            <select className="custom-select">
-              <option>Select group</option>
-            </select>
-          </div>
-
-          <div className="col-md-1 align-self-end">
-            <button className="btn btn-primary btn-block">
-              Add
-            </button>
-          </div>
-
-          <div className="col-md-1 align-self-end">
-            <button className="btn btn-primary btn-block">
-              Remove
-            </button>
-          </div>
-        </div>
+        <MemberAssignment
+          nodes={this.state.nodes}
+          addClicked={this.addClicked.bind(this)}
+          removeClicked={this.removeClicked.bind(this)}
+        />
 
         <Graph nodes={this.state.nodes} isMemberOfGraph={this.state.isMemberOfGraph}/>
 
@@ -130,25 +107,54 @@ class App extends Component {
     );
     if (key) {
       delete nodes[key];
+      const isMemberOfGraph = this.state.isMemberOfGraph.filter(function (e) {
+        return e.from !== key && e.to !== key;
+      });
+
+      this.setState({
+        nodes: nodes,
+        isMemberOfGraph: isMemberOfGraph
+      })
     }
 
   }
 
-  getRandomKey(newNode) {
-    let key = "";
-    let id = Math.round(Math.random() * 100);
-    if (newNode.type === 'group') {
-      key = "g" + id;
-    } else if (newNode.type === "user") {
-      key = "u" + id;
+  addClicked(memberKey, groupKey) {
+    const doesExist = this.state.isMemberOfGraph.filter(function (e) {
+      return e.from === memberKey && e.to === groupKey;
+    }).length > 0;
+    if (!doesExist) {
+      const isMemberOfGraph = this.state.isMemberOfGraph;
+
+      // search if there is a reverse relationship. If so, remove.
+      const reversePair = this.state.isMemberOfGraph.find(
+        e => e.from === groupKey && e.to === memberKey
+      );
+      isMemberOfGraph.splice(isMemberOfGraph.indexOf(reversePair), 1);
+
+      isMemberOfGraph.push({from: memberKey, to: groupKey});
+      this.setState({isMemberOfGraph: isMemberOfGraph});
     }
-    return key;
+  }
+
+  removeClicked(memberKey, groupKey) {
+    if (memberKey.startsWith("g")) {
+      const isMemberOfGraph = this.state.isMemberOfGraph.filter(function (e) {
+        return e.from !== memberKey && e.to !== memberKey;
+      });
+      this.setState({isMemberOfGraph: isMemberOfGraph});
+    } else if (memberKey.startsWith("u")) {
+      const isMemberOfGraph = this.state.isMemberOfGraph.filter(function (e) {
+        return e.from !== memberKey || e.to !== groupKey;
+      });
+      this.setState({isMemberOfGraph: isMemberOfGraph});
+    }
   }
 
   getKeyForNewNode(newNode) {
-    let key = this.getRandomKey(newNode);
+    let key = randomKey(newNode.type);
     while (key in this.state.nodes) {
-      key = this.getRandomKey(newNode);
+      key = randomKey(newNode);
     }
     return key;
   }

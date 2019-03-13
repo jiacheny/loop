@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import GroupNode from './UI/GroupNode';
 import UserNode from './UI/UserNode';
 
-import {drawGraph} from "./utils/Helper";
+import {drawGraph} from "../utils/Helper";
 
 class Graph extends Component {
 
