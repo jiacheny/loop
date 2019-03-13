@@ -2,7 +2,7 @@
 
 The screenshot below is what you will see when you start running this app.
 
-![initial interface](screeshot initial interface.png "initial interface")
+![initial interface](screeshot%20initial%20interface.png "initial interface")
 
 ## Environment
 
@@ -21,7 +21,7 @@ The screenshot below is what you will see when you start running this app.
 * react-test-renderer snapshot for membership `<Graph/>`
 * test coverage result, please the image below
 
-![test coveragee](screenshot test coverage.png "test coverage")
+![test coveragee](screenshot%20test%20coverage.png "test coverage")
 
 ## How to run
 
